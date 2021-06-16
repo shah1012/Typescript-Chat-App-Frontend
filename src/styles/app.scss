@@ -1,2 +1,29 @@
 @import "./loggedComponents/app.scss";
 @import "./notLoggedComponents/app.scss";
+
+:root {
+  --primaryColor: #aad8d3;
+  --secondaryColor: #00adb5;
+  --dark: #393e46;
+  --light: #eeeeee;
+  --primaryFamily: "Poppins", sans-serif;
+  --secondaryFamily: "Lobster", cursive;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}

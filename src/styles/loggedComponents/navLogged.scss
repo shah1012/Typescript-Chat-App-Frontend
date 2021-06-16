@@ -1,0 +1,45 @@
+.navLogged {
+  user-select: none;
+  padding: 0 8vw;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--dark);
+  font-family: var(--primaryFamily);
+  .myAccount {
+    cursor: pointer;
+    position: relative;
+    background-color: var(--secondaryColor);
+    border-radius: 1000000px;
+    padding: 0.8% 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vh;
+    .imgContainer {
+      img {
+        width: 3.4vh;
+        height: 3.4vh;
+        border-radius: 1000000rem;
+        object-fit: cover;
+      }
+    }
+    .username {
+      padding: 0 10px;
+      color: var(--light);
+      font-weight: bold;
+    }
+    .svgContainer {
+      transition: all 0.2s ease-out;
+      svg {
+        width: 3vh;
+        height: 3vh;
+      }
+      cursor: pointer;
+    }
+    .up {
+      transform: rotate(180deg);
+    }
+  }
+}
