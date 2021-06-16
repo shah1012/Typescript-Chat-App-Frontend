@@ -2,8 +2,9 @@
   position: absolute;
   bottom: 0;
   transform: translateY(120%);
+  right: 0;
   background-color: var(--dark);
-  padding: 0.5rem 2rem;
+  padding: 1vh 1.5rem;
   border-radius: 0.4rem;
   width: 130%;
   display: flex;
@@ -22,7 +23,7 @@
       list-style: none;
       background: var(--primaryColor);
 
-      padding: 0.15rem;
+      padding: 0.7vh 0.15rem;
     }
     li:hover {
       background-color: var(--secondaryColor);
