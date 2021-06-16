@@ -6,16 +6,15 @@ const index = () => {
     <div className="navbar-div">
       <ul className="navElements">
         {NavbarNotLoggedLinks.map((l, i) => {
-          l.name === "Sign out" ? return (
+          return l.name === "Sign out" ? (
             <li className="navbar-li">
               <a href={l.path}>{l.name}</a>
             </li>
-          ) : 
-            return(
-              <li className="navbar-li">
+          ) : (
+            <li className="navbar-li">
               <a href={l.path}>{l.name}</a>
             </li>
-            )
+          );
         })}
       </ul>
     </div>
