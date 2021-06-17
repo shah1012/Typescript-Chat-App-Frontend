@@ -6,6 +6,7 @@ import NavBarLogged from "./components/Navbar/NavBarLogged/index";
 function App() {
   return (
     <div className="App">
+      <NavbarNotLogged />
       <NavBarLogged />
     </div>
   );
