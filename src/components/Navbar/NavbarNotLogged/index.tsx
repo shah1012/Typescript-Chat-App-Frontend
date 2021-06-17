@@ -7,11 +7,11 @@ const index = () => {
       <ul className="navElements">
         {NavbarNotLoggedLinks.map((l, i) =>
           l.path === "/signup" ? (
-            <li className="navbar-btn">
+            <li key={l.name} className="navbar-btn">
               <a href={l.path}>{l.name}</a>
             </li>
           ) : (
-            <li className="navbar-li">
+            <li key={l.name} className="navbar-li">
               <a href={l.path} style={{ color: "black" }}>
                 {l.name}
               </a>

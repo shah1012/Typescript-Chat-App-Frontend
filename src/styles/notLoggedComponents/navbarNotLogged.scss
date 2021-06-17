@@ -19,7 +19,7 @@
       a {
         text-decoration: none;
         color: #eeeeee;
-        font-size: 1rem;
+        font-size: 1.3rem;
       }
     }
 
@@ -30,10 +30,14 @@
       margin: 1rem;
       cursor: pointer;
       background-color: #00adb5;
+      transition: all 0.2s ease-out;
+      display: flex;
+      align-items: center;
       a {
         text-decoration: none;
         color: #eeeeee;
-        font-size: 1rem;
+        padding: 0 0.7rem;
+        font-size: 1.3rem;
       }
     }
 
