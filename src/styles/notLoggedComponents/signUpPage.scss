@@ -36,6 +36,7 @@
         label {
           display: block;
           margin-bottom: 0.4rem;
+          font-family: var(--primaryFamily);
         }
         input {
           cursor: pointer;
@@ -66,11 +67,10 @@
       padding: 0.7rem 1.7rem;
       color: var(--light);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      transition: all 0.3s ease-out;
+      transition: all 0.1s ease-out;
     }
     button:hover {
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-      transform: scale(1.05);
     }
     button:active {
       transform: scale(0.9);
