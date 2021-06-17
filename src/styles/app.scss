@@ -23,7 +23,24 @@
   align-items: center;
 }
 
+li {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
   color: white;
+}
+
+h2 {
+  font-family: "lobster", cursive;
+  font-size: 2rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 1000000000px;
+  background-color: var(--secondaryColor);
 }

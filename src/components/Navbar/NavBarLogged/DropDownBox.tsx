@@ -1,5 +1,5 @@
 import React from "react";
-import { dropDownOptions } from "../../../misc/navBarLogged";
+import { dropDownOptions } from "../../../misc/navBarLoggedData";
 
 const DropDownBox: React.FC = () => {
   return (

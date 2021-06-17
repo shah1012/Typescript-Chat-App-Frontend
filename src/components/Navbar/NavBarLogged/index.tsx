@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Triangle } from "../../../misc/navBarLogged";
+import { Triangle } from "../../../misc/navBarLoggedData";
 import nopfp from "../../../images/nopfp.png";
 import DropDownBox from "./DropDownBox";
 interface IAccount {
