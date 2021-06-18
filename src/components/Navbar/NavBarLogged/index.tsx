@@ -7,8 +7,6 @@ interface IAccount {
   profilePic: string;
 }
 
-const fallBackImg = "../../../images/nopfp.png";
-
 const index: React.FC = () => {
   // By useEffect we make a api call to get the user info and display it in the account section
 

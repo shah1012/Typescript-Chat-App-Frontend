@@ -1,28 +1,29 @@
 .dropDownBox {
   position: absolute;
   bottom: 0;
-  transform: translateY(120%);
-  right: 0;
-  background-color: var(--dark);
-  padding: 1vh 1.5rem;
+  transform: translateY(98%);
+  right: 1.5rem;
+  background-color: transparent;
+  padding: 1vh 0rem;
   border-radius: 0.4rem;
   width: 130%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   ul {
-    width: 100%;
+    width: 70%;
     li {
       font-size: 1rem;
       transition: all 0.3s ease-out;
-      border-radius: 0.3rem;
+      border-radius: 0.4rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0.4rem 0;
+      margin: 0.5rem 0;
       list-style: none;
       background: var(--primaryColor);
 
+      box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
       padding: 0.7vh 0.15rem;
     }
     li:hover {
