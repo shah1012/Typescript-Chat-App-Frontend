@@ -8,10 +8,10 @@ import ChatSideBar from "./components/ChatSideBar/Index";
 function App() {
   return (
     <div className="App">
-      {/* <NavbarNotLogged /> */}
-      <NavBarLogged />
-      {/* <SignUpPage /> */}
-      <ChatSideBar />
+      <NavbarNotLogged />
+      <SignUpPage />
+      {/* <NavBarLogged /> */}
+      {/* <ChatSideBar /> */}
     </div>
   );
 }
