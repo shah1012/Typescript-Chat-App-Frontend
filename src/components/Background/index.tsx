@@ -4,8 +4,6 @@ const index = () => {
   return (
     <svg
       className="background"
-      width="1918"
-      height="703"
       viewBox="0 0 1918 703"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

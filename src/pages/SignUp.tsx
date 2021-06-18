@@ -2,11 +2,16 @@ import React from "react";
 import signUpOptions from "../misc/signUpOptions";
 import InputComponents from "../components/SignUp/InputComponents";
 import Background from "../components/Background";
+import Outline from "../components/Background/Outline";
 
 const index = () => {
   return (
     <>
-      <Background />
+      <div className="backgroundDiv">
+        <Background />
+        <Outline />
+      </div>
+
       <section className="signUp">
         <main>
           <h2>XYZ</h2>

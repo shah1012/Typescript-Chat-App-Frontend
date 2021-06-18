@@ -1,9 +1,31 @@
 .background {
-  width: 100vw;
-  height: 80vh;
-
+  position: fixed;
+  bottom: 0rem;
   left: 0;
-  bottom: 0;
-  position: absolute;
+  right: 0;
+  // transform: translateX(-30%);
   z-index: 0;
+  svg {
+    // width: 300vw;
+    // height: 67vh;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.outLine {
+  position: fixed;
+  bottom: 0;
+  transform: translateY(3%);
+  left: 0;
+  right: 0;
+  // transform: translateX(-30%);
+  z-index: 0;
+  filter: blur(1.2px);
+  svg {
+    // width: 300vw;
+    // height: 67vh;
+    width: 100vw;
+    height: 100vh;
+  }
 }
