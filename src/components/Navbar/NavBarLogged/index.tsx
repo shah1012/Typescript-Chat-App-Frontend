@@ -25,6 +25,10 @@ const index: React.FC = () => {
   return (
     <nav className="navLogged">
       <section
+        tabIndex={1}
+        onBlur={() => {
+          setOpen(false);
+        }}
         onClick={() => {
           setOpen((prevState) => !prevState);
         }}
@@ -39,7 +43,7 @@ const index: React.FC = () => {
         >
           {account.name}
         </div>
-        <div className={`flex svgContainer ${open ? "up" : ""}`}>
+        <div className={`flex svgContainer ${open && "up"}`}>
           <Triangle />
         </div>
         {open && <DropDownBox />}
