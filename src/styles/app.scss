@@ -17,6 +17,10 @@
   margin: 0;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .flex {
   display: flex;
   justify-content: center;

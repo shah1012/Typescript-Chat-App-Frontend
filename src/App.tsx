@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       {/* <NavbarNotLogged /> */}
       <NavBarLogged />
-      {/* <SignUpPage /> */}
+      <SignUpPage />
       <ChatSideBar />
     </div>
   );

@@ -1,6 +1,10 @@
 .navLogged {
+  position: fixed;
   user-select: none;
   padding: 0 8vw;
+  right: 0;
+  top: 0;
+  left: 0;
   height: 10vh;
   display: flex;
   justify-content: flex-end;
