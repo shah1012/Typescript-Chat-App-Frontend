@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       {/* <NavbarNotLogged /> */}
-      {/* <NavBarLogged /> */}
+      <NavBarLogged />
       {/* <SignUpPage /> */}
       <ChatSideBar />
     </div>

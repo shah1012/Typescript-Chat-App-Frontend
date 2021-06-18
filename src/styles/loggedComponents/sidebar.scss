@@ -1,9 +1,10 @@
 .chatSideBar {
   height: 100vh;
-  width: 20vh;
+  width: 15vh;
   background-color: var(--primaryColor);
   position: absolute;
   right: 0;
+  z-index: -1;
 
   main {
     height: 100%;
