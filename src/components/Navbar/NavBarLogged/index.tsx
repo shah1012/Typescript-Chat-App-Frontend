@@ -13,7 +13,7 @@ const index: React.FC = () => {
   // sample object
 
   // account = { name: "", profilePic: ""  }
-  const [open, setOpen] = useState<Boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   //State for the drop box
 

@@ -7,12 +7,12 @@ interface Props {
 
 const DashBoardOption: React.FC<Props> = ({ option }) => {
   return (
-    <li>
-      <a href={option.path}>
+    <a href={option.path}>
+      <li>
         <div>{option.svg}</div>
         <label>{option.name}</label>
-      </a>
-    </li>
+      </li>
+    </a>
   );
 };
 
