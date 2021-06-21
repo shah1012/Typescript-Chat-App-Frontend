@@ -9,11 +9,11 @@ import Dashboard from "./components/Dashboard/Index";
 function App() {
   return (
     <div className="App">
-      {/* <NavbarNotLogged /> */}
-      <NavBarLogged />
-      <Dashboard />
-      {/* <SignUpPage /> */}
-      <ChatSideBar />
+      <NavbarNotLogged />
+      {/* <NavBarLogged /> */}
+      {/* <Dashboard /> */}
+      <SignUpPage />
+      {/* <ChatSideBar /> */}
     </div>
   );
 }
