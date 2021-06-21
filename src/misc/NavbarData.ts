@@ -5,6 +5,6 @@ export const NavbarNotLoggedLinks = [
   },
   {
     name: "Sign up",
-    path: "/signup",
+    path: "/signUp",
   },
 ];

@@ -6,8 +6,8 @@ const index = () => {
   return (
     <div className="navbar-div">
       <ul className="navElements">
-        {NavbarNotLoggedLinks.map((l, i) =>
-          l.path === "/signup" ? (
+        {NavbarNotLoggedLinks.map((l) =>
+          l.path === "/signUp" ? (
             <li key={l.name} className="navbar-btn">
               <Link to={l.path}>{l.name}</Link>
             </li>

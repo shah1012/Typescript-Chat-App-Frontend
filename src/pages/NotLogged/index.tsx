@@ -9,13 +9,13 @@ const index: React.FC = () => {
   return (
     <>
       <NavBarNotLogged />
-      <div className="backgroundDiv">
+      <aside className="backgroundDiv">
         <Background />
         <Outline />
-      </div>
+      </aside>
       <Switch>
         <Route path="/" exact></Route>
-        <Route path="/signup">
+        <Route path="/signUp">
           <SignUpPage />
         </Route>
       </Switch>
