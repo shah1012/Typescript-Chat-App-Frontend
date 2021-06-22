@@ -11,7 +11,7 @@ const index: React.FC = () => {
     <>
       <NavBarNotLogged />
       <aside className="backgroundDiv">
-        <Background />
+        {/* <Background /> */}
         <Outline />
       </aside>
       <Switch>

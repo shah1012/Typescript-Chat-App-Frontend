@@ -7,7 +7,7 @@ const token = localStorage.getItem("JWT-TOKEN");
 
 // call the api for validation and if its wrong then ask the user to login again
 
-const tokenValidation = true;
+const tokenValidation = false;
 
 function App() {
   return (
