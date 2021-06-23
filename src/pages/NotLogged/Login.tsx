@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import loginOptions from "../../misc/loginOptions";
+import LoginRefs from "../../misc/LoginRefs";
 import InputComponents from "../../components/Login/InputComponents";
 import Background from "../../components/Background";
 
 const Login = () => {
+  const [view, setView] = React.useState<boolean>(false);
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+
   return (
     <>
       <section className="login">
@@ -13,7 +18,11 @@ const Login = () => {
           <ul>
             {loginOptions.map((option) => (
               <li key={option.id}>
-                <InputComponents option={option} />
+                <InputComponents
+                  option={option}
+                  viewState={[view, setView]}
+                  ref={LoginRefs().find((lRef) => lRef.id === option.id)?.ref}
+                />
               </li>
             ))}
           </ul>
