@@ -79,3 +79,22 @@
     }
   }
 }
+
+.transition {
+  transition: all 0.2s ease-out;
+}
+
+.relative {
+  position: relative;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.absolute {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0.4rem;
+  position: absolute;
+}

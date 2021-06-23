@@ -5,6 +5,7 @@ import Background from "../../components/Background";
 import Outline from "../../components/Background/Outline";
 
 const index = () => {
+  const [view, setView] = React.useState<boolean>(false);
   return (
     <>
       <section className="signUp">
@@ -14,7 +15,7 @@ const index = () => {
           <ul>
             {signUpOptions.map((option) => (
               <li key={option.id}>
-                <InputComponents option={option} />
+                <InputComponents option={option} viewState={[view, setView]} />
               </li>
             ))}
           </ul>
