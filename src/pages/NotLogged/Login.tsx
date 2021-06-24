@@ -1,13 +1,18 @@
 import React, { useRef } from "react";
+import axios from "axios";
 import loginOptions from "../../misc/loginOptions";
 import LoginRefs from "../../misc/LoginRefs";
 import InputComponents from "../../components/Login/InputComponents";
 import Background from "../../components/Background";
+import { LOGIN_URL } from "../../misc/BaseUrls";
 
 const Login = () => {
   const [view, setView] = React.useState<boolean>(false);
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
+  const arr = LoginRefs();
+
+  const handleClick = () => {
+    console.log(arr[0].ref?.current?.value, arr[1].ref?.current?.value);
+  };
 
   return (
     <>
@@ -21,12 +26,12 @@ const Login = () => {
                 <InputComponents
                   option={option}
                   viewState={[view, setView]}
-                  ref={LoginRefs().find((lRef) => lRef.id === option.id)?.ref}
+                  ref={arr.find((lRef) => lRef.id === option.id)?.ref}
                 />
               </li>
             ))}
           </ul>
-          <button>Login</button>
+          <button onClick={handleClick}>Login</button>
         </main>
       </section>
     </>
