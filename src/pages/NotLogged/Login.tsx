@@ -11,7 +11,18 @@ const Login = () => {
   const arr = LoginRefs();
 
   const handleClick = () => {
-    console.log(arr[0].ref?.current?.value, arr[1].ref?.current?.value);
+    let eRef = arr[0].ref?.current?.value;
+    let pRef = arr[1].ref?.current?.value;
+
+    if (eRef || pRef !== null) {
+      axios
+        .post(LOGIN_URL, {
+          email: eRef,
+          password: pRef,
+        })
+        .then((data) => console.log(data))
+        .catch((err) => console.dir(err));
+    }
   };
 
   return (
