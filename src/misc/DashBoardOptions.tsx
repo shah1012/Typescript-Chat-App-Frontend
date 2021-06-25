@@ -56,7 +56,7 @@ const dashboardOptions: IDashboard[] = [
   {
     id: 1,
     name: "Home",
-    path: "/home",
+    path: "/",
     svg: homeIcon(),
   },
   {
