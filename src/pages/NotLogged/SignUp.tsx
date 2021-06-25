@@ -2,21 +2,18 @@ import React from "react";
 import axios from "axios";
 import signUpOptions from "../../misc/signUpOptions";
 import InputComponents from "../../components/SignUp/InputComponents";
-import { SIGNUP_URL } from "../../misc/BaseUrls";
+import { LOGIN_URL, SIGNUP_URL } from "../../misc/BaseUrls";
 import SignUpRefs from "../../misc/SignUpRefs";
-import Background from "../../components/Background";
-import Outline from "../../components/Background/Outline";
 
 const index = () => {
   const [view, setView] = React.useState<boolean>(false);
   const arr = SignUpRefs();
+  let location = window.location;
 
   const handleClick = () => {
     const eRef = arr[0].ref?.current?.value;
     const uRef = arr[1].ref?.current?.value;
     const pRef = arr[2].ref?.current?.value;
-
-    console.log(eRef, uRef, pRef);
 
     axios
       .post(SIGNUP_URL, {
@@ -24,8 +21,10 @@ const index = () => {
         email: eRef,
         password: pRef,
       })
-      .then((data) => console.log(data))
-      .catch((err) => console.dir(err));
+      .then((data) => {
+        location.assign("/login");
+      })
+      .catch((err) => alert("Couldn't make the user"));
   };
 
   return (

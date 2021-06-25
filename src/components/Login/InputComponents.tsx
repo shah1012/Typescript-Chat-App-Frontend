@@ -14,25 +14,27 @@ const InputComponents = React.forwardRef<HTMLInputElement, Props>(
     return (
       <div>
         <label htmlFor={option.name}>{option.name}</label>
-        <input
-          ref={ref}
-          type={
-            option.type === "password"
-              ? view
-                ? "text"
-                : "password"
-              : option.type
-          }
-          id={option.name}
-        />
+        <div className="relative">
+          <input
+            ref={ref}
+            type={
+              option.type === "password"
+                ? view
+                  ? "text"
+                  : "password"
+                : option.type
+            }
+            id={option.name}
+          />
 
-        <div
-          onClick={(e) => {
-            setView((prevState) => !prevState);
-          }}
-          className="svgContainer absolute pointer "
-        >
-          {option.type === "password" ? view ? <Show /> : <Hide /> : ""}
+          <div
+            onClick={(e) => {
+              setView((prevState) => !prevState);
+            }}
+            className="svgContainer absolute pointer "
+          >
+            {option.type === "password" ? view ? <Show /> : <Hide /> : ""}
+          </div>
         </div>
       </div>
     );

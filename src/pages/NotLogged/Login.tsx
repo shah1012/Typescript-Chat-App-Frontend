@@ -3,7 +3,6 @@ import axios from "axios";
 import loginOptions from "../../misc/loginOptions";
 import LoginRefs from "../../misc/LoginRefs";
 import InputComponents from "../../components/Login/InputComponents";
-import Background from "../../components/Background";
 import { LOGIN_URL } from "../../misc/BaseUrls";
 
 const Login = () => {
@@ -20,7 +19,7 @@ const Login = () => {
           email: eRef,
           password: pRef,
         })
-        .then((data) => console.log(data))
+        .then(({ data }) => localStorage.setItem("JWT-TOKEN", data.token))
         .catch((err) => console.dir(err));
     }
   };
