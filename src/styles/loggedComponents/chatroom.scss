@@ -1,8 +1,9 @@
 .chatRoom {
-  padding: 9vh 0 0 14rem;
-  width: 100%;
+  margin: 9vh 0 0 14rem;
+  width: calc(100vh- 14rem);
   height: calc(100vh- 11vh);
-  overflow-y: hidden;
+  overflow: hidden;
+  position: relative;
 }
 .mainBG {
   background: linear-gradient(
@@ -10,7 +11,7 @@
     rgba(127, 189, 192, 0.9) -44.49%,
     rgba(170, 216, 211, 0.1) 204.46%
   );
-  height: 92vh;
+  height: 91vh;
   position: relative;
   z-index: -3;
 }
@@ -44,8 +45,10 @@
 }
 .transparentLayer {
   width: 100%;
+  z-index: -7;
   height: 100%;
-  background: rgba(170, 216, 211, 0.2);
+  opacity: 0.2;
+  background: rgba(170, 216, 211, 0.1);
   border: 0.5px solid rgba(0, 0, 0, 0.3);
   filter: blur(10px);
 }
