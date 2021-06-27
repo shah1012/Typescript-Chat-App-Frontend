@@ -8,10 +8,11 @@ interface Props {
 const index: React.FC<Props> = ({ message }) => {
   const { content } = message;
   return (
-    <div className="message">
+    <div className="senderMessage">
       <div className="svg">
         <svg
-          viewBox="0 0 252 67"
+          preserveAspectRatio="none"
+          viewBox="0 0 382 80"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
