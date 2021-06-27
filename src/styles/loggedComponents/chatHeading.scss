@@ -1,0 +1,32 @@
+.chatHeading {
+  display: flex;
+  height: 5rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: linear-gradient(
+    180deg,
+    #ebebeb 73.16%,
+    rgba(235, 235, 235, 0) 100%
+  );
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+  .info {
+    transition: all 0.2s ease-out;
+    &:hover {
+      transform: scale(1.2);
+    }
+    cursor: pointer;
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  .username {
+    font-family: var(--primaryFamily);
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}

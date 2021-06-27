@@ -1,9 +1,9 @@
-import React from "react";
-import ISignUpOption from "../../Interface/ISignUpOption";
+import React, { useEffect } from "react";
+import ILoginOption from "../../Interface/ILoginOption";
 import { Show, Hide } from "../../misc/showNhideIcons";
 
 interface Props {
-  option: ISignUpOption;
+  option: ILoginOption;
   viewState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 }
 
@@ -17,7 +17,6 @@ const InputComponents = React.forwardRef<HTMLInputElement, Props>(
         <div className="relative">
           <input
             ref={ref}
-            placeholder={option.placeholder}
             type={
               option.type === "password"
                 ? view
@@ -27,6 +26,7 @@ const InputComponents = React.forwardRef<HTMLInputElement, Props>(
             }
             id={option.name}
           />
+
           <div
             onClick={(e) => {
               setView((prevState) => !prevState);

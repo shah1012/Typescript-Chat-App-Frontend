@@ -1,14 +1,15 @@
 import React from "react";
 import { dropDownOptions } from "../../../misc/navBarLoggedData";
+import { Link } from "react-router-dom";
 
 const DropDownBox: React.FC = () => {
   return (
     <section className="dropDownBox">
       <ul>
         {dropDownOptions().map((option) => (
-          <a key={option.id} href={option.path}>
+          <Link key={option.id} to={option.path}>
             <li>{option.name}</li>
-          </a>
+          </Link>
         ))}
       </ul>
     </section>

@@ -1,4 +1,4 @@
-export default interface ISignUpOption {
+export default interface ILoginOption {
   id: number;
   name: string;
   placeholder: string;

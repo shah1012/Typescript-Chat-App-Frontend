@@ -1,20 +1,21 @@
 import React from "react";
 import { NavbarNotLoggedLinks } from "../../../misc/NavbarData";
+import { Link } from "react-router-dom";
 
 const index = () => {
   return (
     <div className="navbar-div">
       <ul className="navElements">
-        {NavbarNotLoggedLinks.map((l, i) =>
-          l.path === "/signup" ? (
+        {NavbarNotLoggedLinks.map((l) =>
+          l.path === "/signUp" ? (
             <li key={l.name} className="navbar-btn">
-              <a href={l.path}>{l.name}</a>
+              <Link to={l.path}>{l.name}</Link>
             </li>
           ) : (
             <li key={l.name} className="navbar-li">
-              <a href={l.path} style={{ color: "black" }}>
+              <Link to={l.path} style={{ color: "black" }}>
                 {l.name}
-              </a>
+              </Link>
             </li>
           )
         )}
