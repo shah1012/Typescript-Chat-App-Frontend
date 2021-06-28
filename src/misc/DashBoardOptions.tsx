@@ -68,7 +68,7 @@ const dashboardOptions: IDashboard[] = [
   {
     id: 3,
     name: "Chat",
-    path: "/chat",
+    path: "/chatroom",
     svg: chatIcon(),
   },
 ];

@@ -1,19 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
+import React from "react";
 
 export const userInfoSlice = createSlice({
-  name: "userInfo",
+  name: "user",
   initialState: {
-    name: "",
-    email: "",
+    user: null,
   },
   reducers: {
-    fetchData: (state, action) => {
-      const { email, name } = action.payload;
-      state.email = email;
-      state.name = name;
+    login: (state, action) => {
+      state.user = action.payload;
+    },
+    logout: (state) => {
+      state.user = null;
     },
   },
 });
 
+export const { login, logout } = userInfoSlice.actions;
+
+export const selectUser = (state: any) => state.user.user;
+
 export default userInfoSlice.reducer;
-export const { fetchData } = userInfoSlice.actions;
