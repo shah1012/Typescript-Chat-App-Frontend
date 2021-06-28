@@ -4,10 +4,14 @@ import loginOptions from "../../misc/loginOptions";
 import LoginRefs from "../../misc/LoginRefs";
 import InputComponents from "../../components/Login/InputComponents";
 import { LOGIN_URL } from "../../misc/BaseUrls";
+import { useAppDispatch } from "../../redux/store";
+import { setToken } from "../../redux/jwtToken";
 
 const Login = () => {
   const [view, setView] = React.useState<boolean>(false);
+
   const arr = LoginRefs();
+  const dispatch = useAppDispatch();
 
   const handleClick = () => {
     let eRef = arr[0].ref?.current?.value;
@@ -19,7 +23,10 @@ const Login = () => {
           email: eRef,
           password: pRef,
         })
-        .then(({ data }) => localStorage.setItem("JWT-TOKEN", data.token))
+        .then(({ data }) => {
+          localStorage.setItem("JWT-TOKEN", data.token);
+          dispatch(setToken({ token: data.token }));
+        })
         .catch((err) => console.dir(err));
     }
   };
