@@ -3,14 +3,21 @@ import "./styles/app.scss";
 import Logged from "./pages/Logged";
 import NotLogged from "./pages/NotLogged";
 import { useSelector } from "react-redux";
-import { RootState } from "./redux/store";
+import { RootState, useAppDispatch } from "./redux/store";
+import validateFn from "./misc/validateFn";
+import { login } from "./redux/userInfo";
+
 // call the api for validation and if its wrong then ask the user to login again
 
 function App() {
   const valid = useSelector<RootState>((state) => state.jwtToken.valid);
-
+  const dispatch = useAppDispatch();
   useEffect(() => {
     const token = localStorage.getItem("JWT-TOKEN");
+    if (!token) return;
+    validateFn(token)
+      .then((payload) => dispatch(login(payload)))
+      .catch((err) => console.dir(err));
   }, []);
 
   return (

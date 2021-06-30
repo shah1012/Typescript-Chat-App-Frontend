@@ -7,14 +7,14 @@ import { LOGIN_URL, ACCOUNT_URL } from "../../misc/BaseUrls";
 import { useAppDispatch } from "../../redux/store";
 import { setToken } from "../../redux/jwtToken";
 import { login } from "../../redux/userInfo";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [view, setView] = React.useState<boolean>(false);
 
   const arr = LoginRefs();
   const dispatch = useAppDispatch();
-  const location = window.location;
-
+  const history = useHistory();
   const handleClick = () => {
     let eRef = arr[0].ref?.current?.value;
     let pRef = arr[1].ref?.current?.value;
@@ -36,15 +36,14 @@ const Login = () => {
             })
             .then((data) => {
               let jwtPayload = data.data["jwt-payload"];
-              dispatch(
-                login({
-                  id: 1,
-                  username: jwtPayload.username,
-                  email: jwtPayload.email,
-                })
-              );
-
-              location.assign("/");
+              const payloadData = {
+                id: 1,
+                username: jwtPayload.username,
+                email: jwtPayload.email,
+              };
+              localStorage.setItem("userData", JSON.stringify(payloadData));
+              dispatch(login(payloadData));
+              history.push("/");
             });
         })
         .catch((err) => console.dir(err));
