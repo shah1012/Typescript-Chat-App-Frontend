@@ -1,7 +1,13 @@
 import axios from "axios";
 import { VALIDATE_URL, ACCOUNT_URL } from "./BaseUrls";
 
-export default async (token: string) => {
+interface IPayload {
+  id: number;
+  username: string;
+  email: string;
+}
+
+export default async (token: string): Promise<[string, IPayload] | void> => {
   if (!token) return;
   try {
     const { data } = await axios.get(VALIDATE_URL, {
@@ -16,13 +22,13 @@ export default async (token: string) => {
       },
     });
     let jwtPayload = res.data["jwt-payload"];
-    const payloadData = {
+    const payloadData: IPayload = {
       id: 1,
       username: jwtPayload.username,
       email: jwtPayload.email,
     };
     localStorage.setItem("userData", JSON.stringify(payloadData));
-    return payloadData;
+    return [data.token, payloadData];
   } catch (err) {
     console.dir(err);
   }

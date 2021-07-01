@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "./redux/store";
 import validateFn from "./misc/validateFn";
 import { login } from "./redux/userInfo";
+import { setToken } from "./redux/jwtToken";
 
 // call the api for validation and if its wrong then ask the user to login again
 
@@ -16,7 +17,13 @@ function App() {
     const token = localStorage.getItem("JWT-TOKEN");
     if (!token) return;
     validateFn(token)
-      .then((payload) => dispatch(login(payload)))
+      .then((payload) => {
+        if (!payload) return;
+
+        const [token, userInfo] = payload;
+        dispatch(setToken(token));
+        dispatch(login(userInfo));
+      })
       .catch((err) => console.dir(err));
   }, []);
 
