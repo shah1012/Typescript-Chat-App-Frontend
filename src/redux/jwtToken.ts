@@ -15,8 +15,7 @@ export const jwtTokenSlice = createSlice({
   },
   reducers: {
     setToken: (state, action) => {
-      const { token } = action.payload;
-      state.token = token;
+      state.token = action.payload.token;
       state.valid = true;
     },
   },

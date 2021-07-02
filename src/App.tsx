@@ -21,7 +21,7 @@ function App() {
         if (!payload) return;
 
         const [token, userInfo] = payload;
-        dispatch(setToken(token));
+        dispatch(setToken({ token }));
         dispatch(login(userInfo));
       })
       .catch((err) => console.dir(err));

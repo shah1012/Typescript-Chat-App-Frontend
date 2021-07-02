@@ -35,9 +35,9 @@ const Login = () => {
               },
             })
             .then((data) => {
-              let jwtPayload = data.data["jwt-payload"];
+              let jwtPayload = data.data;
               const payloadData = {
-                id: 1,
+                id: jwtPayload._id,
                 username: jwtPayload.username,
                 email: jwtPayload.email,
               };

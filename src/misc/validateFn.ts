@@ -1,5 +1,6 @@
 import axios from "axios";
 import { VALIDATE_URL, ACCOUNT_URL } from "./BaseUrls";
+import IUser from "../Interface/IUser";
 
 interface IPayload {
   id: number;
@@ -21,13 +22,14 @@ export default async (token: string): Promise<[string, IPayload] | void> => {
         jwt_token: token,
       },
     });
-    let jwtPayload = res.data["jwt-payload"];
+    let { email, username, id } = res.data;
     const payloadData: IPayload = {
-      id: 1,
-      username: jwtPayload.username,
-      email: jwtPayload.email,
+      id,
+      email,
+      username,
     };
     localStorage.setItem("userData", JSON.stringify(payloadData));
+
     return [data.token, payloadData];
   } catch (err) {
     console.dir(err);
