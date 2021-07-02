@@ -15,11 +15,15 @@ const index: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
 
   //State for the drop box
-  const useInfo = useSelector<RootState>((state) => state.userInfo);
+  const { id, email, username, pfp }: any = useSelector<RootState>(
+    (state) => state.userInfo.user
+  );
+
   const account: IUser = {
-    id: 1,
-    name: "username",
-    pfp: "",
+    id,
+    username,
+    pfp,
+    email,
   };
 
   return (
@@ -41,7 +45,7 @@ const index: React.FC = () => {
           onContextMenu={(e) => e.preventDefault()}
           className="flex username"
         >
-          {account.name}
+          {account.username}
         </div>
         <div className={`flex svgContainer ${open && "up"}`}>
           <Triangle />
