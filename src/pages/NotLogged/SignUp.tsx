@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import signUpOptions from "../../misc/signUpOptions";
 import InputComponents from "../../components/SignUp/InputComponents";
-import { LOGIN_URL, SIGNUP_URL } from "../../misc/BaseUrls";
+import { SIGNUP_URL } from "../../misc/BaseUrls";
 import SignUpRefs from "../../misc/SignUpRefs";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../redux/store";
