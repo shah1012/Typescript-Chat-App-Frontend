@@ -3,12 +3,18 @@ import axios from "axios";
 import loginOptions from "../../misc/loginOptions";
 import LoginRefs from "../../misc/LoginRefs";
 import InputComponents from "../../components/Login/InputComponents";
-import { LOGIN_URL } from "../../misc/BaseUrls";
+import { LOGIN_URL, ACCOUNT_URL } from "../../misc/BaseUrls";
+import { useAppDispatch } from "../../redux/store";
+import { setToken } from "../../redux/jwtToken";
+import { login } from "../../redux/userInfo";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [view, setView] = React.useState<boolean>(false);
-  const arr = LoginRefs();
 
+  const arr = LoginRefs();
+  const dispatch = useAppDispatch();
+  const history = useHistory();
   const handleClick = () => {
     let eRef = arr[0].ref?.current?.value;
     let pRef = arr[1].ref?.current?.value;
@@ -19,7 +25,27 @@ const Login = () => {
           email: eRef,
           password: pRef,
         })
-        .then(({ data }) => localStorage.setItem("JWT-TOKEN", data.token))
+        .then(({ data }) => {
+          localStorage.setItem("JWT-TOKEN", data.token);
+          dispatch(setToken({ token: data.token }));
+          axios
+            .get(ACCOUNT_URL, {
+              headers: {
+                jwt_token: data.token,
+              },
+            })
+            .then((data) => {
+              let jwtPayload = data.data;
+              const payloadData = {
+                id: jwtPayload._id,
+                username: jwtPayload.username,
+                email: jwtPayload.email,
+              };
+              localStorage.setItem("userData", JSON.stringify(payloadData));
+              dispatch(login(payloadData));
+              history.push("/");
+            });
+        })
         .catch((err) => console.dir(err));
     }
   };
