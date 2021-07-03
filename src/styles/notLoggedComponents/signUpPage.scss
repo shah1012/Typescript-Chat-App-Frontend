@@ -80,6 +80,15 @@
   }
 }
 
+.errorMsg {
+  width: 100%;
+  height: 10px;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.25rem;
+  color: red;
+}
+
 .transition {
   transition: all 0.2s ease-out;
 }

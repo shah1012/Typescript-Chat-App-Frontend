@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import signUpOptions from "../../misc/signUpOptions";
 import InputComponents from "../../components/SignUp/InputComponents";
 import { LOGIN_URL, SIGNUP_URL } from "../../misc/BaseUrls";
 import SignUpRefs from "../../misc/SignUpRefs";
+import { useSelector } from "react-redux";
+import { useAppDispatch } from "../../redux/store";
+import { selectError, updateErrorMessage } from "../../redux/errorMessege";
 
 const index = () => {
   const [view, setView] = React.useState<boolean>(false);
   const arr = SignUpRefs();
   let location = window.location;
+  let err = useSelector(selectError);
+  const dispatch = useAppDispatch();
 
   const handleClick = () => {
     const eRef = arr[0].ref?.current?.value;
@@ -24,7 +29,26 @@ const index = () => {
       .then((data) => {
         location.assign("/login");
       })
-      .catch((err) => alert("Couldn't make the user"));
+      .catch((err) => {
+        if (err.response?.data) {
+          if (Array.isArray(err.response.data)) {
+            let newErrMsg = "";
+            err.response.data.forEach((em: string) => {
+              newErrMsg += em + ", \n";
+            });
+
+            dispatch(updateErrorMessage(newErrMsg));
+            setTimeout(() => {
+              dispatch(updateErrorMessage(""));
+            }, 5000);
+          } else {
+            dispatch(updateErrorMessage(err.response.data));
+            setTimeout(() => {
+              dispatch(updateErrorMessage(""));
+            }, 5000);
+          }
+        }
+      });
   };
 
   return (
@@ -45,6 +69,7 @@ const index = () => {
             ))}
           </ul>
           <button onClick={handleClick}>Create Account</button>
+          <p className="errorMsg">{err}</p>
         </main>
       </section>
     </>

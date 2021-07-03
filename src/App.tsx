@@ -10,6 +10,8 @@ import { setToken } from "./redux/jwtToken";
 
 // call the api for validation and if its wrong then ask the user to login again
 
+const tokenValidation = true;
+
 function App() {
   const valid = useSelector<RootState>((state) => state.jwtToken.valid);
   const dispatch = useAppDispatch();
