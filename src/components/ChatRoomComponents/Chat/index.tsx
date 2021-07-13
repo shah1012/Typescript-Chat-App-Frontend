@@ -5,7 +5,11 @@ import SenderMessage from "../SenderMessage";
 import Message from "../Message";
 import IUser from "../../../Interface/IUser";
 
-const index = () => {
+interface Props {
+  messages: IMessage[];
+}
+
+const index = ({ messages }: Props) => {
   // useEffect(() => {
   //   if (!messagesRef?.current) return;
   //   messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
@@ -14,32 +18,9 @@ const index = () => {
   // fetch the user from redux
 
   const user: IUser = {
-    name: "satvik",
+    username: "satvik",
     id: 1,
   };
-
-  const messages: IMessage[] = [
-    {
-      id: 1,
-      content: "Hey buddy",
-      sender: { name: "username", id: 2 },
-    },
-    {
-      id: 2,
-      content: "This is a bigger message",
-      sender: { name: "satvik", id: 1 },
-    },
-    {
-      id: 3,
-      content: "This is a bigger message than the normal one",
-      sender: { name: "satvik", id: 1 },
-    },
-    {
-      id: 4,
-      content: "I sent the message",
-      sender: { name: "satvik", id: 1 },
-    },
-  ];
 
   return (
     <section className="chatMessages ">
@@ -47,7 +28,7 @@ const index = () => {
         messages.map((message) => (
           <div
             key={message.id}
-            className={message.sender.name === user.name ? "owner" : ""}
+            className={message.sender.username === user.username ? "owner" : ""}
           >
             <Message message={message} />
           </div>
