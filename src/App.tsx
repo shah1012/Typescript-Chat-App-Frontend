@@ -9,8 +9,7 @@ import { login } from "./redux/userInfo";
 import { setToken } from "./redux/jwtToken";
 
 // socket stuff
-import { connectSocket } from "./misc/socketFuncs";
-
+import { validateSocket } from "./misc/socketFuncs";
 // call the api for validation and if its wrong then ask the user to login again
 
 const tokenValidation = true;
@@ -28,8 +27,6 @@ function App() {
         const [token, userInfo] = payload;
         dispatch(setToken({ token }));
         dispatch(login(userInfo));
-
-        connectSocket();
       })
       .catch((err) => console.dir(err));
   }, []);

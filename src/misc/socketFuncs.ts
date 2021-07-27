@@ -1,14 +1,15 @@
 import { io, Socket } from "socket.io-client";
 
-export let socket: Socket;
-
-export const connectSocket = () => {
-  socket = io("http://localhost:3002");
-  socket.on("connect", () => {
-    console.log(`you connected with id ${socket.id}`);
-  });
-};
-
-export const sendMessage = (message: string) => {
-  socket.emit("send message", message);
+export const validateSocket = () => {
+  const getJWTTOKEN = localStorage.getItem("JWT-TOKEN");
+  if (getJWTTOKEN) {
+    const socket: Socket = io("http://localhost:3001", {
+      auth: {
+        token: getJWTTOKEN,
+      },
+    });
+    console.log(socket);
+  } else {
+    return null;
+  }
 };

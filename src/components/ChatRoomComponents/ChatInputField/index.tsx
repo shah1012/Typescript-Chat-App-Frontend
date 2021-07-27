@@ -1,5 +1,5 @@
 import React, { SetStateAction } from "react";
-import { sendMessage } from "../../../misc/socketFuncs";
+// import { sendMessage } from "../../../misc/socketFuncs";
 import IMessage from "../../../Interface/IMessage";
 
 interface Props {
@@ -16,7 +16,7 @@ const index = ({ messages, setMessages }: Props) => {
         e.preventDefault();
         if (!messageRef.current) return;
 
-        sendMessage(messageRef.current.value);
+        // sendMessage(messageRef.current.value);
         setMessages([
           ...messages,
           {
