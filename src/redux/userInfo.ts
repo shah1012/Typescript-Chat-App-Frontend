@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import React from "react";
+import noPfp from "../images/nopfp.png";
+import IUser from "../Interface/IUser";
 
-const initial = {
+const initial: IUser = {
   id: "",
   username: "",
   email: "",
   pfp: "",
+  bio: "",
 };
 export const userInfoSlice = createSlice({
   name: "user",
@@ -19,7 +22,7 @@ export const userInfoSlice = createSlice({
         id,
         username,
         email,
-        pfp: pfp || "",
+        pfp: pfp || noPfp,
       };
     },
     logout: (state) => {
