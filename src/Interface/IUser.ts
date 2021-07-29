@@ -1,6 +1,7 @@
 export default interface IUser {
-  id: number;
+  id: string;
   username: string;
   pfp?: string;
-  email?: string;
+  email: string;
+  bio?: string;
 }
